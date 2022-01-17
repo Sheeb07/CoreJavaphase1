@@ -1,0 +1,30 @@
+package assignments;
+
+public class Sleepwait {
+
+	    //create an instance of the Object   
+	    private static Object obj = new Object();   
+	  
+	    //main() method starts with handling InterruptedException  
+	    public static void main(String[] args)throws InterruptedException   
+	    {   
+	          
+	        //pause process for two second  
+	        Thread.sleep(7000);   
+	          
+	        //print custom statement  
+	        System.out.println( Thread.currentThread().getName() +   
+	        " Thread is woken after seven second");   
+	          
+	        //create synchronizec context from which we call Wait() method  
+	        synchronized (obj)    
+	        {   
+	            //use wailt() method to set obj in waiting state for two seconds  
+	            obj.wait(7000);   
+	  
+	            System.out.println(obj + " Object is in waiting state and woken after 7 seconds");   
+	        }   
+	    }   
+	}
+
+
